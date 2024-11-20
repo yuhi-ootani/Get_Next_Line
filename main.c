@@ -30,7 +30,7 @@ int	main(int argc, char **argv)
 	// Read lines until get_next_line returns NULL
 	while ((line = get_next_line(fd)) != NULL)
 	{
-		printf("Line %d:\n%s\n", line_number, line);
+		printf("Line %d:\n%s", line_number, line);
 		free(line); // Free the allocated memory for the line
 		line_number++;
 	}

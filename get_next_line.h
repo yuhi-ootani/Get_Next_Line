@@ -6,7 +6,7 @@
 /*   By: oyuhi <oyuhi@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 12:47:52 by oyuhi             #+#    #+#             */
-/*   Updated: 2024/11/19 14:27:19 by oyuhi            ###   ########.fr       */
+/*   Updated: 2024/11/20 16:11:36 by oyuhi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,17 @@
 #  define BUFFER_SIZE 10
 # endif
 
-typedef struct s_list
-{
-	char			*content;
-	struct s_list	*next;
-}					t_list;
+char	*remove_copied(char *mega_buffer);
+char	*dup_till_newline(char *mega_buffer);
+char	*join_buffer(char *mega_buffer, char *buffer);
+int		search_newline(char *mega_buffer);
+char	*read_till_newline(int fd, char *mega_buffer);
+char	*get_next_line(int fd);
+
+size_t	ft_strlen(char *str);
+char	*ft_strdup(char *s);
+char	*ft_strchr(char *s, char c);
+char	*ft_strjoin(char *s1, char *s2);
+void	ft_strcpy(char *dest, char *str);
 
 #endif
