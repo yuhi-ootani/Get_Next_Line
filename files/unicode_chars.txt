@@ -1,0 +1,1 @@
+This line contains Unicode characters: 測試, テスト, тест.

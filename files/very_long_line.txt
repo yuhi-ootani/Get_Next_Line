@@ -1,0 +1,124 @@
+1. Empty File (empty.txt)
+Content: (No content; the file is empty)
+Purpose: Tests how your function handles reading from an empty file.
+
+2. Single Line without Newline at EOF (single_line_no_newline.txt)
+Content:
+vbnet
+コードをコピーする
+This is a single line without a newline character at the end.
+Purpose: Checks if your function correctly reads the last line even when it doesn't end with a newline character.
+
+3. Single Line with Newline at EOF (single_line_with_newline.txt)
+Content:
+
+vbnet
+コードをコピーする
+This is a single line with a newline character at the end.
+(Ensure there's a newline character at the end of the line)
+
+Purpose: Verifies that your function can read a single line that ends with a newline character.
+
+4. Multiple Lines (multiple_lines.txt)
+Content:
+arduino
+コードをコピーする
+First line.
+Second line.
+Third line.
+Purpose: Tests reading multiple lines sequentially and handling newline characters correctly.
+
+5. Lines Longer than BUFFER_SIZE (long_lines.txt)
+Content:
+
+arduino
+コードをコピーする
+[A line longer than your BUFFER_SIZE]
+Example (assuming BUFFER_SIZE is 32):
+
+arduino
+コードをコピーする
+This line is intentionally made longer than the defined BUFFER_SIZE to test if the get_next_line function can handle lines that exceed the buffer limit without any issues.
+Purpose: Ensures that your function can handle lines that are longer than the buffer size and read them completely.
+
+6. Multiple Consecutive Newlines (consecutive_newlines.txt)
+Content:
+arduino
+コードをコピーする
+First line.
+
+Second line after two newlines.
+
+Purpose: Tests how your function handles empty lines and multiple consecutive newline characters.
+
+7. File with Only Newlines (only_newlines.txt)
+Content:
+
+コードをコピーする
+
+
+
+
+(Contains several newline characters without any other text)
+
+Purpose: Checks if your function can handle files that consist solely of newline characters.
+
+8. No Newline at End of File (no_newline_eof.txt)
+Content:
+scss
+コードをコピーする
+Line without a newline at EOF
+Another line without newline
+Purpose: Tests reading multiple lines when the file does not end with a newline character.
+
+9. Mixed Line Endings (mixed_line_endings.txt)
+Content:
+
+csharp
+コードをコピーする
+Line with LF\n
+Line with CRLF\r\n
+Line with CR\r
+(Use actual line endings in the file)
+
+Purpose: Checks how your function handles different types of line endings (Unix LF \n, Windows CRLF \r\n, old Mac CR \r).
+
+10. Large File (large_file.txt)
+Content: (A file containing a large amount of text, possibly several megabytes in size)
+
+Example: Repeat a line or a paragraph multiple times to create a large file.
+
+Purpose: Tests the performance and memory management of your function when dealing with large files.
+
+11. File with Null Characters (null_chars.txt)
+Content:
+csharp
+コードをコピーする
+Line before null char.\0Line after null char.
+Purpose: Verifies that your function can handle strings with null characters embedded within them.
+
+12. Binary File (binary_file.bin)
+Content: (A file containing binary data, not text)
+Purpose: Ensures that your function behaves correctly when reading non-text files.
+
+13. Unicode Characters (unicode_chars.txt)
+Content:
+arduino
+コードをコピーする
+This line contains Unicode characters: 測試, テスト, тест.
+Purpose: Tests if your function can handle files with Unicode characters.
+
+14. Very Long Single Line (very_long_line.txt)
+Content: (A single line that is extremely long, possibly hundreds of thousands of characters)
+
+Example: Repeat a character or word to create a very long line.
+
+Purpose: Checks the robustness of your function when processing extremely long lines.
+
+15. Special Characters (special_chars.txt)
+Content:
+csharp
+コードをコピーする
+Line with special characters: !@#$%^&*()_+-=[]{}|;:',.<>/?`~"
+Purpose: Ensures that special characters do not interfere with the reading process.
+

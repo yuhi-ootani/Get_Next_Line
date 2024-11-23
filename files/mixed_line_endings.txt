@@ -1,0 +1,3 @@
+Line with LF\n
+Line with CRLF\r\n
+Line with CR\r

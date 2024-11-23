@@ -1,0 +1,2 @@
+Line without a newline at EOF
+Another line without newline

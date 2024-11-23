@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oyuhi <oyuhi@student.42tokyo.jp>           +#+  +:+       +#+        */
+/*   By: otaniyuhi <otaniyuhi@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 12:47:55 by oyuhi             #+#    #+#             */
-/*   Updated: 2024/11/20 18:10:12 by oyuhi            ###   ########.fr       */
+/*   Updated: 2024/11/23 15:55:27 by otaniyuhi        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-size_t	ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
 	size_t	len;
 
@@ -39,31 +39,23 @@ char	*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-char	*ft_strdup(char *s)
+void	ft_strncpy(char *dest, const char *str, size_t len)
 {
-	size_t	len;
-	int		i;
-	char	*dup;
+	size_t	i;
 
-	len = ft_strlen(s);
-	dup = (char *)malloc((len + 1) * sizeof(char));
-	if (!dup)
-		return (NULL);
+	if (!dest || !str)
+		return ;
 	i = 0;
-	while (s[i])
+	while (i < len && str[i])
 	{
-		dup[i] = s[i];
+		dest[i] = str[i];
 		i++;
 	}
-	dup[i] = '\0';
-	return (dup);
-}
-
-void	ft_strcpy(char *dest, char *str)
-{
-	while (*str)
-		*dest++ = *str++;
-	*dest = '\0';
+	while (i < len)
+	{
+		dest[i] = '\0';
+		i++;
+	}
 }
 
 char	*ft_strjoin(char *mega_buf, char *buf)
@@ -80,11 +72,43 @@ char	*ft_strjoin(char *mega_buf, char *buf)
 		len_mega = ft_strlen(mega_buf);
 	joined_buffer = (char *)malloc(len_mega + len_buf + 1);
 	if (!joined_buffer)
+	{
+		free(mega_buf);
 		return (NULL);
+	}
 	if (mega_buf)
-		ft_strcpy(joined_buffer, mega_buf);
+	{
+		ft_strncpy(joined_buffer, mega_buf, len_mega);
+		free(mega_buf);
+	}
 	if (buf)
-		ft_strcpy(joined_buffer + len_mega, buf);
+		ft_strncpy(joined_buffer + len_mega, buf, len_buf);
 	joined_buffer[len_mega + len_buf] = '\0';
 	return (joined_buffer);
+}
+
+char	*ft_substr(char *s, unsigned int start, size_t len)
+{
+	size_t	s_len;
+	char	*sub;
+
+	if (!s)
+		return (NULL);
+	s_len = ft_strlen(s);
+	if (s_len <= start)
+	{
+		sub = malloc(1);
+		if (!sub)
+			return (NULL);
+		sub[0] = '\0';
+		return (sub);
+	}
+	if (s_len - start < len)
+		len = s_len - start;
+	sub = (char *)malloc(len + 1);
+	if (!sub)
+		return (NULL);
+	ft_strncpy(sub, s + start, len);
+	sub[len] = '\0';
+	return (sub);
 }

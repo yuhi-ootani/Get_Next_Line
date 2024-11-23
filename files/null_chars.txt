@@ -1,0 +1,1 @@
+Line before null char.\0Line after null char.
