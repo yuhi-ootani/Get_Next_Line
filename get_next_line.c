@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: otaniyuhi <otaniyuhi@student.42.fr>        +#+  +:+       +#+        */
+/*   By: oyuhi <oyuhi@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 12:47:57 by oyuhi             #+#    #+#             */
-/*   Updated: 2024/11/23 16:47:12 by otaniyuhi        ###   ########.fr       */
+/*   Updated: 2024/12/22 09:59:52 by oyuhi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ char	*get_next_line(int fd)
 	char		*next_line;
 	char		*newline_pos;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || BUFFER_SIZE > SSIZE_MAX)
+	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	read_till_newline(fd, &mega_buf);
 	if (!mega_buf)

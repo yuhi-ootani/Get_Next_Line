@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: otaniyuhi <otaniyuhi@student.42.fr>        +#+  +:+       +#+        */
+/*   By: oyuhi <oyuhi@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 12:47:52 by oyuhi             #+#    #+#             */
-/*   Updated: 2024/11/23 13:22:10 by otaniyuhi        ###   ########.fr       */
+/*   Updated: 2024/12/22 10:03:01 by oyuhi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 // malloc NULL free
 # include <stdlib.h>
 // SSIZE_MAX
-# include <limits.h>
+# include <stdint.h>
 
 // if Buffer size is not defined, the below Buffer size will be used.
 # ifndef BUFFER_SIZE
