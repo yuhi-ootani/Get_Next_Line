@@ -6,7 +6,7 @@
 /*   By: oyuhi <oyuhi@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 12:47:57 by oyuhi             #+#    #+#             */
-/*   Updated: 2024/12/22 09:59:52 by oyuhi            ###   ########.fr       */
+/*   Updated: 2024/12/22 13:20:55 by oyuhi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,3 +82,43 @@ char	*get_next_line(int fd)
 	split_by_newline(&next_line, newline_pos, &mega_buf);
 	return (next_line);
 }
+
+// #include "get_next_line.h" // Include your GNL header here
+// #include <fcntl.h> // For open
+// #include <stdio.h> // For printf, perror
+// #include <stdlib.h> // For free
+// #include <unistd.h> // For close
+
+// int	main(int argc, char **argv)
+// {
+// 	int		fd;
+// 	char	*line;
+
+// 	if (argc == 2)
+// 	{
+// 		// Open the provided file
+// 		fd = open(argv[1], O_RDONLY);
+// 		if (fd < 0)
+// 		{
+// 			perror("Error opening file");
+// 			return (1);
+// 		}
+// 	}
+// 	else
+// 	{
+// 		// No filename provided, use standard input
+// 		fd = STDIN_FILENO;
+// 	}
+// 	// Read line by line until EOF or error
+// 	while ((line = get_next_line(fd)) != NULL)
+// 	{
+// 		printf("%s", line);
+// 		free(line);
+// 	}
+// 	// Close the file if we opened one
+// 	if (argc == 2)
+// 		close(fd);
+// 	return (0);
+// }
+
+

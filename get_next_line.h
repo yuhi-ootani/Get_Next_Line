@@ -6,7 +6,7 @@
 /*   By: oyuhi <oyuhi@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 12:47:52 by oyuhi             #+#    #+#             */
-/*   Updated: 2024/12/22 10:03:01 by oyuhi            ###   ########.fr       */
+/*   Updated: 2024/12/22 10:56:15 by oyuhi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@
 # include <unistd.h>
 // malloc NULL free
 # include <stdlib.h>
-// SSIZE_MAX
+// SIZE_MAX
 # include <stdint.h>
 
 // if Buffer size is not defined, the below Buffer size will be used.
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1026
+#  define BUFFER_SIZE 1024
 # endif
 
 void	split_by_newline(char **next_line, char *newline_pos, char **mega_buf);
