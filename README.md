@@ -54,14 +54,6 @@ All source files are written in standard C (100% of the codebase). :contentRefer
        return (0);
    }
 
-Compile and run:
 
-bash
-Copy
-Edit
-gcc -Wall -Wextra -Werror -D BUFFER_SIZE=42 get_next_line.c get_next_line_utils.c main.c -o demo
-./demo
-This prints each line of example.txt, including the newline character. 
-github.com
 
 
